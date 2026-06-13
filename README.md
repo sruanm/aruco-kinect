@@ -11,6 +11,7 @@
 This package subscribes to the RGB image stream published by the [Azure Kinect ROS driver](https://github.com/microsoft/Azure_Kinect_ROS_Driver), detects [ArUco](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) markers in each frame using OpenCV, and estimates their 6-DoF pose (translation + rotation) relative to the camera. The annotated image is re-published for visualization in RViz or rqt.
 
 **Key behaviors:**
+
 - Detects markers from the `DICT_5X5_100` dictionary
 - Estimates pose per marker using `cv2.aruco.estimatePoseSingleMarkers`
 - Logs translation and rotation vectors to the ROS logger
@@ -21,13 +22,13 @@ This package subscribes to the RGB image stream published by the [Azure Kinect R
 
 ## Requirements
 
-| Dependency | Version |
-|---|---|
-| ROS 2 | Humble (or newer) |
-| [Azure Kinect ROS Driver](https://github.com/microsoft/Azure_Kinect_ROS_Driver) | latest |
-| OpenCV | 4.x (with `aruco` contrib module) |
-| `cv_bridge` | — |
-| Python | 3.10+ |
+| Dependency                                                                      | Version                           |
+| ------------------------------------------------------------------------------- | --------------------------------- |
+| ROS 2                                                                           | Humble (or newer)                 |
+| [Azure Kinect ROS Driver](https://github.com/microsoft/Azure_Kinect_ROS_Driver) | latest                            |
+| OpenCV                                                                          | 4.x (with `aruco` contrib module) |
+| `cv_bridge`                                                                     | —                                 |
+| Python                                                                          | 3.10+                             |
 
 ## Installation
 
@@ -79,10 +80,10 @@ rqt_image_view /image_display
 
 ### Topics
 
-| Topic | Direction | Type | Description |
-|---|---|---|---|
-| `rgb/image_raw` | Subscribed | `sensor_msgs/Image` | Raw RGB frames from the Kinect |
-| `image_display` | Published | `sensor_msgs/Image` | Annotated frames with detected markers |
+| Topic           | Direction  | Type                | Description                            |
+| --------------- | ---------- | ------------------- | -------------------------------------- |
+| `rgb/image_raw` | Subscribed | `sensor_msgs/Image` | Raw RGB frames from the Kinect         |
+| `image_display` | Published  | `sensor_msgs/Image` | Annotated frames with detected markers |
 
 ## Marker Setup
 
@@ -99,3 +100,9 @@ rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(
 
 > [!TIP]
 > You can generate printable ArUco markers at [chev.me/arucogen](https://chev.me/arucogen/) — select dictionary **5x5** and any ID from 0 to 99.
+
+## Authors
+
+<a href="https://github.com/sruanm/aruco-kinect/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sruanm/aruco-kinect" />
+</a>

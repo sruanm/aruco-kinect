@@ -3,9 +3,9 @@
 <package format="3">
   <name>aruco</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="lindo@gmial.com">labiras</maintainer>
-  <license>TODO: License declaration</license>
+  <description>ROS 2 package for ArUco marker detection and pose estimation using the Azure Kinect depth camera.</description>
+  <maintainer email="ruan.macs@gmail.com">rubi</maintainer>
+  <license>MIT</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
